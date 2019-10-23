@@ -10,7 +10,6 @@ class Solution:
 
             while pointer2 <= len(nums):
                 if sum(nums[pointer1:pointer2]) > max:
-                    print(sum(nums[pointer1:pointer2]))
                     max = sum(nums[pointer1:pointer2])
                 pointer2 += 1
             
@@ -23,6 +22,8 @@ class Solution:
             return nums[0]
         
         max = sum(nums[:])
+
+
 
         return max
 
