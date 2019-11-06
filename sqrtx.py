@@ -5,14 +5,16 @@ class Solution:
         mid = (high + low) // 2
 
         while low <= high: 
+            # Perfect square
             if mid * mid == x:
-                # Perfect square
                 return mid
 
+            # Mid squared is too high
             if mid * mid > x:
                 high = mid - 1
                 mid = (high + low) // 2
 
+            # Mid squared is too low
             else:
                 low = mid + 1
                 mid = (high + low) // 2
