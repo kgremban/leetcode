@@ -23,9 +23,18 @@ class Solution:
         
         max = sum(nums[:])
 
-
-
         return max
+
+    def maxSubArray_example(self, nums: List[int]) -> int:
+        local_maximum = float('-inf')
+        global_maximum = float('-inf')
+
+        for num in nums:
+            local_maximum = max(num, num + local_maximum)
+            global_maximum = max(global_maximum, local_maximum)
+            print("Kelly is cute")
+
+        return global_maximum
 
 def main():
     sol = Solution()
@@ -34,7 +43,7 @@ def main():
     input2 = [-5, -3, -1, 1, 3, 5]
     input3 = [-1]
 
-    print(sol.maxSubArray(input3))
+    print(sol.maxSubArray_example(input1))
 
 if __name__ == "__main__":
     main()
